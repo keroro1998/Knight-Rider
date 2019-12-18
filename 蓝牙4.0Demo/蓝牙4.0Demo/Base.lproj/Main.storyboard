@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ed-Or-6lO">
+                                <rect key="frame" x="75" y="557" width="113" height="30"/>
+                                <state key="normal" title="Scanning device"/>
+                                <connections>
+                                    <action selector="scanForPeripherals" destination="BYZ-38-t0r" eventType="touchUpInside" id="in3-37-QwU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUs-Pp-gT0">
+                                <rect key="frame" x="226" y="557" width="93" height="30"/>
+                                <state key="normal" title="Empty device"/>
+                                <connections>
+                                    <action selector="clearPeripherals" destination="BYZ-38-t0r" eventType="touchUpInside" id="dC0-7r-1DH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1em-Hk-wMe" userLabel="Stop Scanning device">
+                                <rect key="frame" x="150" y="635" width="128" height="30"/>
+                                <state key="normal" title="Stop Scanning device"/>
+                                <connections>
+                                    <action selector="StopScanningPeripherals" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Pv-JY-lBN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTt-Gj-ybK" userLabel="Move">
+                                <rect key="frame" x="195" y="673" width="38" height="30"/>
+                                <state key="normal" title="Move"/>
+                                <connections>
+                                    <action selector="Move" destination="BYZ-38-t0r" eventType="touchUpInside" id="tfI-Pc-vZr"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpr-aW-Dtv">
+                                <rect key="frame" x="80" y="265" width="240" height="292"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p4G-5A-Rev">
+                                <rect key="frame" x="47" y="124" width="320" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jpr-aW-Dtv" id="off-Ze-suv"/>
+                                    <outlet property="delegate" destination="Jpr-aW-Dtv" id="rsF-vo-Y3e"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bluetooth demo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdP-W7-AVt">
+                                <rect key="frame" x="146" y="68" width="122" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qTt-Gj-ybK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="240" id="94M-oK-Nf3"/>
+                            <constraint firstItem="Jpr-aW-Dtv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FYv-2L-HGw"/>
+                            <constraint firstItem="8Ed-Or-6lO" firstAttribute="top" secondItem="Jpr-aW-Dtv" secondAttribute="bottom" constant="50" id="Vd0-JC-KDy"/>
+                            <constraint firstItem="Jpr-aW-Dtv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="Wru-fs-mfm"/>
+                            <constraint firstItem="qTt-Gj-ybK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zw3-ju-blP"/>
+                            <constraint firstItem="1em-Hk-wMe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cIM-2m-eqx"/>
+                            <constraint firstItem="eUs-Pp-gT0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="120" id="cr7-K2-M8Q"/>
+                            <constraint firstItem="8Ed-Or-6lO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-75" id="fBf-Sd-gwV"/>
+                            <constraint firstItem="1em-Hk-wMe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="200" id="gd4-qy-Ldj"/>
+                            <constraint firstItem="8Ed-Or-6lO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="120" id="jhh-Uv-1MO"/>
+                            <constraint firstItem="eUs-Pp-gT0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="wqU-VR-T2u"/>
+                            <constraint firstItem="Jpr-aW-Dtv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-37" id="zFz-rK-FuS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="peripheralText" destination="Jpr-aW-Dtv" id="gK2-ai-oTz"/>
+                        <outlet property="tableView" destination="p4G-5A-Rev" id="zcP-31-NCw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="36.830357142857139"/>
+        </scene>
+    </scenes>
+</document>
